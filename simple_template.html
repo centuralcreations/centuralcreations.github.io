@@ -296,7 +296,7 @@
         console.log(xml_http_request.responseText);
         let master_string = "";
         for (const property in xml_http_request) {
-          master_string += `${property}: ${object[property]}`
+          master_string += `${property}: ${xml_http_request[property]}`
         }
           document.getElementById("response_main").innerHTML = master_string;
           document.getElementById("response").innerHTML = xml_http_request.responseText
