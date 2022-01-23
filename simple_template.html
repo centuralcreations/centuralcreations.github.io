@@ -286,13 +286,14 @@
       }
     }    
     function main() {
-        document.getElementById("response_main").innerHTML = "HERE";
+        
         let group_key = "9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
         let request_url = `http://world.secondlife.com/group/${group_key}`;
         request_url = "https://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
         var xml_http_request = new XMLHttpRequest();
         xml_http_request.onreadystatechange = function() {
           console.log(xml_http_request.responseText);
+          document.getElementById("response_main").innerHTML = xml_http_request;
           document.getElementById("response").innerHTML = xml_http_request.responseText
           
             if (this.readyState == 4 && this.status == 200) {
