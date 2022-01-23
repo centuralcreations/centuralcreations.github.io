@@ -294,7 +294,7 @@
         xml_http_request.onreadystatechange = function() {
         console.log(xml_http_request.responseText);
         let master_string = "";
-        for (const property in object) {
+        for (const property in xml_http_request) {
           master_string += `${property}: ${object[property]}`
         }
           document.getElementById("response_main").innerHTML = master_string;
