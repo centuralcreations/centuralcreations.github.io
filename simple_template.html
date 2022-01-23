@@ -286,13 +286,14 @@
         request_url = "http://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
         var xml_http_request = new XMLHttpRequest();
         xml_http_request.onreadystatechange = function() {
-        document.getElementById("response").innerHTML = xml_http_request.responseText
+          document.getElementById("response").innerHTML = xml_http_request.responseText
+          
             if (this.readyState == 4 && this.status == 200) {
                // Typical action to be performed when the document is ready:
                document.getElementById("response").innerHTML = xml_http_request.responseText;
             }
         };
-        xml_http_request.open("POST", request_url, true);
+        xml_http_request.open("GET", request_url, true);
         xml_http_request.send();
     }
     ready(main());
