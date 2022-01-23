@@ -28,7 +28,7 @@
         <a href="#home">Home</a>
       </h1>
       <nav>
-        <a href="#page">Marketplace</a>
+        <a href="#marketplace">Marketplace</a>
         <a href="#blog">News</a>
         <a href="#photos">Gallery</a>
         <a href="#portfolio">Donate</a>
@@ -43,6 +43,7 @@
       
       <section id="home">
         <span id="response">No Response Yet...</span>
+        <span id="response_main">No Response Yet...</span>
         <p>Centural Creations currently resides in the <abbr title="Second Life">SL</abbr> metaverse.
           Please feel free to browse our products and use them within your own creations!
           
@@ -79,10 +80,10 @@
       </section>
       
       <!-- ----------
-      ---- PAGE  ----
+      - MARKETPLACE -
       ----------- -->
       
-      <section id="page">
+      <section id="marketplace">
         
         <iframe src="https://marketplace.secondlife.com/stores/243720"></iframe>
         
@@ -285,6 +286,7 @@
       }
     }    
     function main() {
+        document.getElementById("response_main").innerHTML = "HERE";
         let group_key = "9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
         let request_url = `http://world.secondlife.com/group/${group_key}`;
         request_url = "https://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
