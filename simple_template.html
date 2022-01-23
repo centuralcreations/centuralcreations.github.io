@@ -12,16 +12,34 @@
     
     <!-- Recommended minimum -->
     <meta property="og:title" content="Centural Creations">
-    <meta property="og:description" content="">
+    <meta property="og:description" content="Your place for Open Source Free Creations.">
     <meta property="og:image" content="https://john-doe.neocities.org/img/john-doe.png">
     <meta name="twitter:card" content="summary_large_image">
     
     <!-- You could also inline the stylesheet -->
-    <link rel="stylesheet" href="style.css">
     
+    <link rel="stylesheet" href="simple_template.css">
+    <link rel="stylesheet" href="reset.css">
+    
+    <style>
+    </style>
+    
+    <script>
+      let group_key = "9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
+      let request_url = `http://world.secondlife.com/group/${group_key}`;
+      var xml_http_request = new XMLHttpRequest();
+      xml_http_request.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+             // Typical action to be performed when the document is ready:
+             document.getElementById("response").innerHTML = xml_http_request.responseText;
+          }
+      };
+      xml_http_request.open("GET", request_url, true);
+      xml_http_request.send();
+    </script>
   </head>
   <body>
-    
+    <span id="response">No Response Yet...</span>
     <header>
       <h1>
         <a href="#home">John Doe</a>
