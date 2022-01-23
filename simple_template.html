@@ -24,7 +24,7 @@
   </head>
   <body>
     <header>
-      <span>version 0.0.002</span>
+      <span>version 0.0.003</span>
       <h1>
         <a href="#home">Home</a>
       </h1>
@@ -291,23 +291,14 @@
         let group_key = "9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
         let request_url = `http://world.secondlife.com/group/${group_key}`;
         request_url = "https://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae";
-        var xml_http_request = new XMLHttpRequest();
-        xml_http_request.onreadystatechange = function() {
-        console.log(xml_http_request.responseText);
-        let master_string = "";
-        for (const property in xml_http_request) {
-          master_string += `${property}: ${xml_http_request[property]}`
+        function reqListener () {
+          document.getElementById("response").innerHTML = this.responseText
         }
-          document.getElementById("response_main").innerHTML = master_string;
-          document.getElementById("response").innerHTML = xml_http_request.responseText
-          
-            if (this.readyState == 4 && this.status == 200) {
-               // Typical action to be performed when the document is ready:
-               document.getElementById("response").innerHTML = xml_http_request.responseText;
-            }
-        };
-        xml_http_request.open("POST", request_url, true);
-        xml_http_request.send();
+
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("GET", request_url);
+        oReq.send();
     }
     ready(main());
   </script>
