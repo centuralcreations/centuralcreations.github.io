@@ -306,7 +306,7 @@
                document.getElementById("response").innerHTML = xml_http_request.responseText;
             }
         };
-        xml_http_request.open("GET", request_url, true);
+        xml_http_request.open("POST", request_url, true);
         xml_http_request.send();
     }
     ready(main());
