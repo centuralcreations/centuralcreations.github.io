@@ -1,0 +1,34 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HTML custom element for displaying 3D models: Hello World</title>
+<style>
+.model { 
+  animation: spin 10s linear infinite;
+ }
+
+ @keyframes spin {
+   to {
+     transform: rotateY(1turn)
+   }
+ }
+</style>
+  </head>
+  <body>
+    
+<h1>Model custom element: Hello world</h1>
+  <x-model class="model" src="../../assets/models/gltf/basic_modern_phone/basic_modern_phone_version_one.gltf"></x-model>
+  <p>If everything worked OK, there should be a rotating 3D model above.</p>
+
+  <div class="panel panel--about">
+    <p><cite>This is a <a href="https://keithclark.co.uk">Keith Clark</a> experiment.
+    Feel free to contact me on <a href="https://twitter.com/keithclarkcouk">twitter</a>
+    if you have questions.</cite></p>
+  </div>
+
+  <script src="../../assets/js/vendor/custom-element-polyfill.min.js"></script>
+  <script src="../../assets/js/vendor/three.min.js"></script>
+  <script src="../../assets/js/vendor/three-gltf-loader.min.js"></script>
+  <script src="../../assets/js/model-element.min.js"></script>
+  </body>
