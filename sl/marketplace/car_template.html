@@ -1,0 +1,243 @@
+<!-- This file relys heavily on open source software, please help maintain/update this if you plan to use it in your own project share if possible! -->
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Low Poly Modern Phone</title>
+    <style>
+      .model { 
+        width: 30vw;
+        height: 30vw;
+        animation: spin 10s linear infinite;
+      }
+      @keyframes spin {
+        to {
+          transform: rotateY(1turn)
+        }
+      }
+      .button_link {
+        background: none!important;
+        border: 0.4em;
+        padding: 0.1em!important;
+        color: #069;
+        text-decoration: underline;
+        cursor: pointer;
+      }
+    </style>
+
+    <style>
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default radio button */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 9px;
+        width: 9px;
+        background-color: #eee;
+        border-radius: 50%;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When the radio button is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the indicator (dot/circle) when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the indicator (dot/circle) */
+      .container .checkmark:after {
+        top: 5px;
+        left: 5px;
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: white;
+      }
+      .parent {
+        /*border: 1px solid black;*/
+        margin: 1rem;
+        padding: 2rem 2rem;
+        text-align: center;
+      }
+      .child {
+        display: inline-block;
+        /*border: 1px solid red;*/
+        padding: 0.25rem 0.25rem;
+        vertical-align: middle;
+      }
+      .content {
+        margin: 0.15rem;
+        margin-top:0;
+        padding:0;  
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;  
+      }
+      .radio_filetype_labels {
+        margin: 0.15rem;
+        padding:0.15rem; 
+      }
+      body {
+        background-color:rgba(26, 130, 73,0.5);  
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent content">
+      <h1>Low Poly Modern Phone</h1>
+      <div class="child">
+        <x-model class="model" style="max-width: 300px; max-height: 300px;" 
+                  src="../../assets/models/gltf/car_template/object_car_template_version_one.gltf">
+          <img id="imgScale" src="../../assets/gif/car_template/object_car_template.gif" />
+        </x-model>
+      </div>
+      <div class="child">
+        <div class="parent radio_filetype_labels">
+          <label class="container child">.dae
+            <input type="radio" checked="checked" name="radio" value="dae">
+            <span class="checkmark"></span>
+          </label>
+
+          <label class="container child">.gltf
+            <input type="radio" name="radio" value="gltf">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div>
+          <ul>
+            <lh>
+              Level of Details (
+              <abbr title="Commonly used and reffered to when uploding Mesh to Second Life. The Level of Detail is used to help determine the total land impact of the entire primitive object. The use of multiple levels of detail will help optomize both appearance at different distances as well as load of your creation on the viewer.">
+                LOD
+              </abbr>
+              )
+            </lh>
+            <li> 
+              <button class="button_link" onclick="">High</button>
+            </li>
+            <li>
+              Medium (Use above)
+            </li>
+            <li>
+              Low (Use above)
+            </li>
+            <li>
+              Lowest (About to fix...)
+            </li>
+          <ul>
+          <p class="prices">
+            <span class="price-ld">L$0</span>
+          </p>
+          <a href="https://marketplace.secondlife.com/orders/buy_now/22874861?price=0">
+            <button class="button shop_button" id="buy_now_button">
+              <span class="">Buy Now</span>
+            </button>
+          </a>
+          
+          <p>
+            This is a Low Land Impact/Low Poly Modern Phone
+          </p>
+         </div>
+      </div>
+    </div>
+    <div class="parent">
+      <a class="child button_link" href="https://marketplace.secondlife.com/p/Low-Poly-Modern-Phone/23148902">« to marketplace listing</a>
+      <a class="child" href="secondlife:///app/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae/about">
+        <button class="button_link" onclick="view_group()">
+          <span>View Group Information</span>
+         </button>
+      </a>
+      <a class="child" href="secondlife://ODDJOB/101/110/50">
+        <button class="button_link" onclick="view_inworld_landmark()">
+          <span>Visit our In World Store</span>
+         </button>
+       </a>
+    </div>
+      <p>
+        This page is UNDERCONSTRUCTION ~ Please contact 
+        <a href="secondlife:///app/agent/41e2b6fc-9835-4be2-a219-4bda7875780e/about">
+        <button onclick="view_owner_profile()" class="button_link">NardweBones</button>
+        </a> 
+        if you have any questions or need help with something!
+        <br>
+        Compatible Mesh Avatars are to come soon!
+      </p>
+        <a href="https://secondlife.com/my/lindex/buy.php">
+            Buy more <img style="max-width:64px" src="https://cashier.secondlife.com/static/img/pm-logos/linden_dollar-64px.png"></img>
+          </a>
+    <footer>version_one revision:0.0.00n ~ !IMPORTANT! This page is in no way affiliated with Second Life, however all links direct BACK to SL.</footer>
+  </body>
+  <script src="../../assets/js/custom-element-polyfill.min.js"></script>
+  <script src="../../assets/js/three.min.js"></script>
+  <script src="../../assets/js/three-gltf-loader.min.js"></script>
+  <script src="../../assets/js/model-element.min.js"></script>
+  <script>
+    function download() {
+        let radio = document.getElementsByName('radio');
+          
+        for(let index = 0; index < radio.length; index++) {
+            if(radio[index].checked)
+              window.open(
+                `https://centuralcreations.github.io/assets/models/${radio[index].value}/car_template/object_car_template_version_one.${radio[index].value}`);
+        }
+    }
+    function timeout_load(url) {
+      setTimeout(function() {            
+                    window.location = url;
+                }, 1500);    
+    }
+    function view_owner_profile() {
+      timeout_load("http://world.secondlife.com/resident/41e2b6fc-9835-4be2-a219-4bda7875780e");  
+    }
+    function view_group() {
+      timeout_load("http://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae");
+    }
+    function view_inworld_landmark() {
+      timeout_load("http://maps.secondlife.com/secondlife/Oddjob/103/97/51");  
+    }
+    function download_dae() {
+      window.open("https://centuralcreations.github.io/assets/models/dae/car_template/object_car_template_version_one.dae");  
+    }
+    function download_gltf() {
+      window.open("https://centuralcreations.github.io/assets/models/gltf/car_template/object_car_template_version_one.gltf");
+    }
+   </script>
+</html>
