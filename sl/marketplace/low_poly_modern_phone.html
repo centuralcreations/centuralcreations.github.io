@@ -156,13 +156,21 @@
     </div>
     <div class="parent">
       <a class="child" href="https://marketplace.secondlife.com/p/Low-Poly-Modern-Phone/23148902"><- to marketplace listing</a>
-      <a class="child" href="secondlife:///app/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae/about" class="button web_link"><span>View Full Group Profile in Second Life</span></a>
-      <a class="child" href="secondlife://ODDJOB/101/110/50" class="button web_link"><span>Visit our In World Store</span></a>
+      <a class="child" href="secondlife:///app/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae/about" class="button web_link">
+        <button class="button" onclick="view_group()">
+          <span>View Group Information</span>
+         </button>
+      </a>
+      <a class="child" href="secondlife://ODDJOB/101/110/50" class="button web_link">
+        <button class="button" onclick="view_inworld_landmark()">
+          <span>Visit our In World Store</span>
+         </button>
+       </a>
     </div>
       <p>
         This page is UNDERCONSTRUCTION ~ Please contact 
         <a href="secondlife:///app/agent/41e2b6fc-9835-4be2-a219-4bda7875780e/about">
-        <button onclick="contact_nardwebones()" class="child button">NardweBones</button>
+        <button onclick="view_owner_profile()" class="child button">NardweBones</button>
         </a>
         if you have any questions or need help with something!
       </p>
@@ -182,11 +190,19 @@
                 `https://centuralcreations.github.io/assets/models/${radio[index].value}/low_poly_modern_phone/object_low_poly_modern_phone_version_one.${radio[index].value}`);
         }
     }
-    function contact_nardwebones() {
-      //window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
+    function timeout_load(url) {
       setTimeout(function() {            
-                    window.location = "http://world.secondlife.com/resident/41e2b6fc-9835-4be2-a219-4bda7875780e";
-                }, 1500);  
+                    window.location = url;
+                }, 1500);    
+    }
+    function view_owner_profile() {
+      timeout_load("http://world.secondlife.com/resident/41e2b6fc-9835-4be2-a219-4bda7875780e");  
+    }
+    function view_group() {
+      timeout_load("http://world.secondlife.com/group/9eb7d5a0-a508-bb2b-c3bf-2b96a0f23aae");
+    }
+    function view_inworld_landmark() {
+      timeout_load("http://maps.secondlife.com/secondlife/Oddjob/103/97/51");  
     }
     function download_dae() {
       window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
