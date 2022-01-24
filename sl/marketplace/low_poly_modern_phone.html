@@ -17,14 +17,25 @@
    }
  }
 
+  .button_link {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*optional*/
+    font-family: arial, sans-serif;
+    /*input has OS specific font-family*/
+    color: #069;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 </style>
   </head>
   <body>
     <h1>Low Poly Modern Phone</h1>
     <x-model class="model" style="max-width: 400px; max-height: 400px;" src="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf"></x-model>
      <p>This is a Low Land Impact/Low Poly Modern Phone, you may download the  
-       <a onclick="download_dae">.dae</a> or
-       <a onclick="download_gltf">.gltf</a> files.
+       <button class="button_link" onclick="download_dae">.dae</button> or
+       <button class="button_link" onclick="download_gltf">.gltf</button> files.
      </p>
     <p class="prices">
       <span class="price-ld">L$0</span>
@@ -48,4 +59,4 @@
     function download_gltf() {
       window.open("https://centuralcreations.github.io/assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf");
     }
-    </script>
+   </script>
