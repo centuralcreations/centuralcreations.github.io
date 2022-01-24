@@ -88,15 +88,29 @@
         border-radius: 50%;
         background: white;
       }
+      .parent {
+        border: 1px solid black;
+        margin: 1rem;
+        padding: 2rem 2rem;
+        text-align: center;
+      }
+      .child {
+        display: inline-block;
+        border: 1px solid red;
+        padding: 1rem 1rem;
+        vertical-align: middle;
+      }
     </style>
   </head>
   <body>
     <h1>Low Poly Modern Phone</h1>
-    <div>
-      <x-model class="model" style="max-width: 400px; max-height: 400px;" 
-                src="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf">
-      </x-model>
-      <div>
+    <div class="parent">
+      <div class="child">
+        <x-model class="model" style="max-width: 400px; max-height: 400px;" 
+                  src="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf">
+        </x-model>
+      </div>
+      <div class="child">
         <label class="container">.dae
           <input type="radio" checked="checked" name="radio" value="dae">
           <span class="checkmark"></span>
@@ -123,20 +137,21 @@
             Lowest
           </li>
         <ul>
+        <p class="prices">
+          <span class="price-ld">L$0</span>
+        </p>
+        <a href="https://marketplace.secondlife.com/orders/buy_now/23148902?price=0">
+          <button class="button shop_button" id="buy_now_button">
+            <span class="">Buy Now</span>
+          </button>
+        </a>
       </div>
     </div>
     <div>
       <p>
         This is a Low Land Impact/Low Poly Modern Phone
       </p>
-      <p class="prices">
-        <span class="price-ld">L$0</span>
-      </p>
-      <a href="https://marketplace.secondlife.com/orders/buy_now/23148902?price=0">
-        <button class="button shop_button" id="buy_now_button">
-          <span class="">Buy Now</span>
-        </button>
-      </a>
+      
     </div>
     <button class="button_link" onclick="download_dae()">Download .dae</button>
       <button class="button_link" onclick="download_gltf()">Download .gltf</button>
