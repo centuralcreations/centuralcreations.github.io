@@ -94,8 +94,8 @@
       }
       .parent {
         /*border: 1px solid black;*/
-        margin: 1rem;
-        padding: 2rem 2rem;
+        margin: 0.25rem;
+        padding: 0.75rem 0.75rem;
         text-align: center;
       }
       .child {
@@ -122,6 +122,8 @@
         background-color: white;  
       }
       .video_frame {
+        margin:0.15rem;
+        padding:0.15rem;
         background-color:black;
         border-radius:5%;
         border: 3px solid black;
@@ -138,7 +140,7 @@
             <img id="imgScale" src="../../assets/gif/low_poly_modern_phone/object_low_poly_modern_phone.gif" />
           </x-model>
         </div>
-         <div class="video_frame child">
+         <div class="video_frame child parent">
            <div class="child">
              
            <span style="float:top; color: #069; font-size:0.8em margin:0; padding:0; top:0; lef:0;">View Video »</span>
@@ -185,8 +187,11 @@
           </a>
          </div>
       </div>
-           <iframe width="245" height="190" src="https://www.youtube.com/embed/jIuRAzsmPGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
+      <div class="child">
+        <iframe width="245" height="190" src="https://www.youtube.com/embed/jIuRAzsmPGg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+      </div>
+      </div>
       </div>
       
       <div>
