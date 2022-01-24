@@ -22,7 +22,10 @@
   <body>
     <h1>Low Poly Modern Phone</h1>
     <x-model class="model" style="max-width: 400px; max-height: 400px;" src="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf"></x-model>
-     <p>This is a Low Land Impact/Low Poly Modern Phone, you may download the <a href="../../assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae">.dae</a> or <a href="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf">.gltf</a> files.</p>
+     <p>This is a Low Land Impact/Low Poly Modern Phone, you may download the  
+       <a onclick="download_dae">.dae</a> or
+       <a onclick="download_gltf">.gltf</a> files.
+     </p>
     <p class="prices">
       <span class="price-ld">L$0</span>
     </p>
@@ -38,9 +41,11 @@
   <script src="../../assets/js/three.min.js"></script>
   <script src="../../assets/js/three-gltf-loader.min.js"></script>
   <script src="../../assets/js/model-element.min.js"></script>
-   <button onclick="open_download_test();">Download Test</button>
   <script>
-    function open_download_test() {
-      window.open("https://centuralcreations.github.io/assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf");  
+    function download_dae() {
+      window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
+    }
+    function download_gltf() {
+      window.open("https://centuralcreations.github.io/assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf");
     }
     </script>
