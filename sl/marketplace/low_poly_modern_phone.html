@@ -23,15 +23,107 @@
         cursor: pointer;
       }
     </style>
+
+    <style>
+      /* The container */
+      .container {
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+
+      /* Hide the browser's default radio button */
+      .container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+      }
+
+      /* Create a custom radio button */
+      .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 25px;
+        width: 25px;
+        background-color: #eee;
+        border-radius: 50%;
+      }
+
+      /* On mouse-over, add a grey background color */
+      .container:hover input ~ .checkmark {
+        background-color: #ccc;
+      }
+
+      /* When the radio button is checked, add a blue background */
+      .container input:checked ~ .checkmark {
+        background-color: #2196F3;
+      }
+
+      /* Create the indicator (the dot/circle - hidden when not checked) */
+      .checkmark:after {
+        content: "";
+        position: absolute;
+        display: none;
+      }
+
+      /* Show the indicator (dot/circle) when checked */
+      .container input:checked ~ .checkmark:after {
+        display: block;
+      }
+
+      /* Style the indicator (dot/circle) */
+      .container .checkmark:after {
+        top: 9px;
+        left: 9px;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: white;
+      }
+    </style>
   </head>
   <body>
     <h1>Low Poly Modern Phone</h1>
     <div>
       <x-model class="model" style="max-width: 400px; max-height: 400px;" 
                 src="../../assets/models/gltf/low_poly_modern_phone/object_low_poly_modern_phone_version_one.gltf">
-      </x-model> 
-      <button class="button_link" onclick="download_dae()">Download .dae</button>
-      <button class="button_link" onclick="download_gltf()">Download .gltf</button>
+      </x-model>
+      <div>
+        <label class="container">.dae
+          <input type="radio" checked="checked" name="radio" value="dae">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="container">.gltf
+          <input type="radio" name="radio" value="gltf">
+          <span class="checkmark"></span>
+        </label>
+        <ul>
+          <lh>
+            Object Downloads
+          </lh>
+          <li> 
+            <button class="button_link" onclick="download()">High</button>
+          </li>
+          <li>
+            Medium (Use above)
+          </li>
+          <li>
+            Low (Use above)
+          </li>
+          <li>
+            Lowest
+          </li>
+        <ul>
+      </div>
     </div>
     <div>
       <p>
@@ -46,14 +138,25 @@
         </button>
       </a>
     </div>
+    <button class="button_link" onclick="download_dae()">Download .dae</button>
+      <button class="button_link" onclick="download_gltf()">Download .gltf</button>
     <a href="https://marketplace.secondlife.com/p/Low-Poly-Modern-Phone/23148902"><- to marketplace listing</a>
-    <footer>version_one revision:0.0.001</footer>
+    <footer>version_one revision:0.0.002</footer>
   </body>
   <script src="../../assets/js/custom-element-polyfill.min.js"></script>
   <script src="../../assets/js/three.min.js"></script>
   <script src="../../assets/js/three-gltf-loader.min.js"></script>
   <script src="../../assets/js/model-element.min.js"></script>
   <script>
+    function download() {
+        let radio = document.getElementsByName('radio');
+          
+        for(let index = 0; index < radio.length; index++) {
+            if(radio[index].checked)
+              window.open(
+                `https://centuralcreations.github.io/assets/models/${radio[index].value}/low_poly_modern_phone/object_low_poly_modern_phone_version_one.${radio[index].value}`);
+        }
+    }
     function download_dae() {
       window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
     }
