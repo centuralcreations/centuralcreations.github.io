@@ -161,10 +161,10 @@
     </div>
       <p>
         This page is UNDERCONSTRUCTION ~ Please contact 
-        <a class="child" href="secondlife:///app/agent/41e2b6fc-9835-4be2-a219-4bda7875780e/about" class="button web_link"><span>NardweBones</span></a>
+        <button onclick="ontact_nardwebones()" class="child" href="secondlife:///app/agent/41e2b6fc-9835-4be2-a219-4bda7875780e/about" class="button web_link"><span>NardweBones</span></button>
         if you have any questions or need help with something!
       </p>
-    <footer>version_one revision:0.0.006</footer>
+    <footer>version_one revision:0.0.007</footer>
   </body>
   <script src="../../assets/js/custom-element-polyfill.min.js"></script>
   <script src="../../assets/js/three.min.js"></script>
@@ -179,6 +179,12 @@
               window.open(
                 `https://centuralcreations.github.io/assets/models/${radio[index].value}/low_poly_modern_phone/object_low_poly_modern_phone_version_one.${radio[index].value}`);
         }
+    }
+    function contact_nardwebones() {
+      //window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
+      setTimeout(function() {            
+                    window.location = "http://world.secondlife.com/resident/41e2b6fc-9835-4be2-a219-4bda7875780e";
+                }, 500);  
     }
     function download_dae() {
       window.open("https://centuralcreations.github.io/assets/models/dae/low_poly_modern_phone/object_low_poly_modern_phone_version_one.dae");  
