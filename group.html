@@ -1,0 +1,11 @@
+<html>
+  <head></head>
+  <body></body>
+  <script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+      get: (searchParams, prop) => searchParams.get(prop),
+    });
+    let group_uuid = params.group_uuid;
+    windows.location = `secondlife:///app/group/${group_uuid}/about`
+  </script>
+</html>
