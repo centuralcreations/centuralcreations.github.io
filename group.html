@@ -6,6 +6,7 @@
       get: (searchParams, prop) => searchParams.get(prop),
     });
     let group_uuid = params.group_uuid;
-    window.location = `secondlife:///app/group/${group_uuid}/about`
+    window.location = `https://world.secondlife.com/group/${group_uuid}`
+    window.open(`secondlife:///app/group/${group_uuid}/about`);
   </script>
 </html>
