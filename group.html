@@ -4,9 +4,9 @@
   <script>
     const params = new Proxy(new URLSearchParams(window.location.search), {
       get: (searchParams, prop) => searchParams.get(prop),
-    });
-    let group_uuid = params.group_uuid;
+    })
+    let group_uuid = params.group_uuid
     window.location = `https://world.secondlife.com/group/${group_uuid}`
-    window.open(`secondlife:///app/group/${group_uuid}/about`);
+    window.open(`secondlife:///app/group/${group_uuid}/about`)
   </script>
 </html>
